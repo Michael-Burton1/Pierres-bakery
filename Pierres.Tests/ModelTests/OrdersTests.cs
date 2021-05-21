@@ -12,5 +12,10 @@ public void Dispose()
   {
     Order.ClearAll();
   }
-
+  [TestMethod]
+  public void OrderConstructor_CreatesAnOrderObject_Order()
+  {
+    Order myOrder = new Order("test");
+    Assert.AreEqual(typeof(Order), myOrder.GetType());
+  }
 }

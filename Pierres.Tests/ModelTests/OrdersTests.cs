@@ -44,6 +44,14 @@ namespace Pierres.TestTools
 
       Assert.AreEqual(updatedDetails, result);
     }
+    [TestMethod]
+    public void GetAll_ReturnsAnEmptyList_OrdersList()
+    {
+      List<Order> newList = new List<Order> { };
 
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }

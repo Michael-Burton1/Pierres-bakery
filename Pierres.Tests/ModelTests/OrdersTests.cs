@@ -1,6 +1,6 @@
-using Microsoft.VisualStudios.TestTOols.UnitTesting;
-using Sysytem.Collections.Generic;
-using Sysytem;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System;
 using Pierres.Models;
 
 namespace Pierres.TestTools
@@ -25,7 +25,9 @@ namespace Pierres.TestTools
     public void GetDetails_retunsOrderDetails_string()
     {
       string details = "12 hot crossed buns";
+
       Order myOrder = new Order(details);
+      string result = myOrder.Details;
 
       Assert.AreEqual(details, result);
     }

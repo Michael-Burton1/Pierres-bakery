@@ -18,4 +18,12 @@ public void Dispose()
     Order myOrder = new Order("test");
     Assert.AreEqual(typeof(Order), myOrder.GetType());
   }
+  [TestMethod]
+  public void GetDetails_retunsOrderDetails_string()
+  {
+    string details = "12 hot crossed buns";
+    Order myOrder = new Order(details);
+
+    Assert.AreEqual(details, result);
+  }
 }

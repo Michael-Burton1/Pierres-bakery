@@ -8,6 +8,12 @@ namespace Pierres.Models
     public string Details { get; set; }
     private static List<Order> _instances = new List<Order> { };
 
+    public Order(string details)
+    {
+      Details = details;
+      _instances.Add(this);
+    }
+
 
 
 

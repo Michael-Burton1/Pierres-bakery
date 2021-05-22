@@ -23,12 +23,13 @@ namespace Pierres.Tests
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
-      string name = new VendorsTests(name);
+      string name = new Vendor(name);
+      Vendor newVendor = new Vendor(name);
 
-      string result = new Vendor.Name;
+      string result = newVendor.Name;
 
       Assert.AreEqual(name, result);
-    })
-}
+    }
+  }
 
 }

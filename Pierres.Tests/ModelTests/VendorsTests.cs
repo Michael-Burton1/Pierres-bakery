@@ -16,7 +16,7 @@ namespace Pierres.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor vendor1 = new Vendor("Michael's house of pancakes:MiHOP");
+      Vendor vendor1 = new Vendor("Yogi's house of pancakes:Y-HOP?");
       Assert.AreEqual(typeof(Vendor), vendor1.GetType());
     }
 
@@ -40,6 +40,19 @@ namespace Pierres.Tests
       int result = NewVendor.Id;
 
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void GetAll_RetunsAllVendorsObjectsa_VendorsList()
+    {
+      string name1 = "Freddy Kruger's Killer Bread";
+      string name2 = "Cardi B's WAP: Waffles and Pancakes";
+      Vendor newVendor1 = new Vendor(name1);
+      Vendor newVendor2 = new Vendor(name2);
+
+      Vendor reuslt = Vendor.Find(2);
+
+      Assert.AreEqual(newVendor2, result);
     }
   }
 

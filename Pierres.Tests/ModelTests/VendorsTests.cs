@@ -32,7 +32,15 @@ namespace Pierres.Tests
     }
 
     [TestMethod]
+    public void GetId_RetunsVendorId_Int()
+    {
+      string name = "Count Chocula's Discount Chocolate Biscuits";
+      Vendor NewVendor = new Vendor(name);
 
+      int result = NewVendor.Id;
+
+      Assert.AreEqual(1, result);
+    }
   }
 
 }

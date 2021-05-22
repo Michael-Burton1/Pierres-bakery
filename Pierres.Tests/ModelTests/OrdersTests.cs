@@ -53,5 +53,19 @@ namespace Pierres.TestTools
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      String myDetails = "12 hot cross buns";
+      String yourDetails = "4 and 20 blackbirds baked into a pie.";
+      Order newOrder1 = new Order(myDetails);
+      Order newOrder2 = new Order(yourDetails);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }

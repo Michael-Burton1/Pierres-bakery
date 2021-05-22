@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections.Generic;
 
 namespace Pierres.Models
@@ -24,5 +24,6 @@ namespace Pierres.Models
     {
       _instances.Clear();
     }
+
   }
 }

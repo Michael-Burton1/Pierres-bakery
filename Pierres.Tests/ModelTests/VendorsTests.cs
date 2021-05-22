@@ -16,7 +16,7 @@ namespace Pierres.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor vendor1 = new Vendor("Test Vendor");
+      Vendor vendor1 = new Vendor("Michael's house of pancakes:MiHOP");
       Assert.AreEqual(typeof(Vendor), vendor1.GetType());
     }
 
@@ -30,6 +30,9 @@ namespace Pierres.Tests
 
       Assert.AreEqual(name, result);
     }
+
+    [TestMethod]
+
   }
 
 }

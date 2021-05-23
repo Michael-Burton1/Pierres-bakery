@@ -5,14 +5,14 @@ namespace Pierres.Models
   public class Order
   {
     public string Details { get; set; }
-    public int ID { get; }
+    public int Id { get; }
     private static List<Order> _instances = new List<Order> { };
 
     public Order(string details)
     {
       Details = details;
       _instances.Add(this);
-      ID = _instances.Count;
+      Id = _instances.Count;
     }
 
     public static List<Order> GetAll()

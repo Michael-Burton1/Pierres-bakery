@@ -4,31 +4,41 @@ using System.Collections.Generic;
 
 namespace Pierres.Controllers
 {
-
-  public class OrdersController
+  public class OrdersController : Controller
   {
-    [httpGet("/orders")]
+
+    [HttpGet("/orders")]
     public ActionResult Index()
     {
-      List<Orders> allOrders = Order.GetAll();
+      List<Order> allOrders = Order.GetAll();
       return View(allOrders);
     }
-    [HttpGet("/Orders/new")]
+
+    [HttpGet("/orders/new")]
     public ActionResult New()
     {
       return View();
     }
-    [HttpPost("/items")]
-    public ActionResult Create(string details);
+
+    [HttpPost("/orders")]
+    public ActionResult Create(string description)
     {
-      Order myOrder = new Order(details);
-    return RedirectToAction("Index");
+      Order myOrder = new Order(description);
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost("/orders/delete")]
+    public ActionResult DeleteAll()
+    {
+      Order.ClearAll();
+      return View();
+    }
+
+    [HttpGet("/orders/{id}")]
+    public ActionResult Show(int id)
+    {
+      Order foundOrder = Order.Find(id);
+      return View(foundOrder);
+    }
   }
-  [HttpGet("/Orders/{id}")]
-  public ActionResultnShow(int id)
-  {
-    Order foundOrder = Order.Find(id);
-    return View(foundOrder);
-  }
-}
 }

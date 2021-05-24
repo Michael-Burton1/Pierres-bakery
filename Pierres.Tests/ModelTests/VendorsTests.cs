@@ -16,7 +16,7 @@ namespace Pierres.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor vendor1 = new Vendor("Yogi's house of pancakes:Y-HOP?");
+      Vendor vendor1 = new Vendor("Yogi's house of pancakes:Y-HOP?", "A pancake house that asks philosphoical questions");
       Assert.AreEqual(typeof(Vendor), vendor1.GetType());
     }
 
@@ -24,18 +24,23 @@ namespace Pierres.Tests
     public void GetName_ReturnsName_String()
     {
       string name = "Game Of Scones";
-      Vendor newVendor = new Vendor(name);
+      string discription = "A land of 'fire' pastries and ice-ing";
 
-      string result = newVendor.Name;
+      Vendor newVendor = new Vendor(name, discription);
 
-      Assert.AreEqual(name, result);
+      string nameResult = newVendor.Name;
+      string discriptionResult = newVendor.Discription;
+
+      Assert.AreEqual(name, nameResult);
+      Assert.AreEqual(discription, discriptionResult);
     }
 
     [TestMethod]
     public void GetId_RetunsVendorId_Int()
     {
       string name = "Count Chocula's Discount Chocolate Biscuits";
-      Vendor newVendor = new Vendor(name);
+      string discription = "Biscuits you can sink your teeth into!";
+      Vendor newVendor = new Vendor(name, discription);
 
       int result = newVendor.Id;
 
@@ -48,9 +53,11 @@ namespace Pierres.Tests
     public void GetAll_RetunsAllVendorsObjectsa_VendorsList()
     {
       string name01 = "Let's get this Bread";
+      string discription01 = "We sevice ducks and young professionals";
       string name02 = "Joleen, I'm begging of you plz don't take my ham.";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string discription02 = "Now serving ham and cheese croissants.";
+      Vendor newVendor1 = new Vendor(name01, discription01);
+      Vendor newVendor2 = new Vendor(name02, discription02);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       //Act
@@ -66,9 +73,11 @@ namespace Pierres.Tests
     public void Find_ReturnsCorrectVendor_Vendor()
     {
       string name1 = "Freddy Krugger's Killer Bread";
+      string discription1 = "Bread so good you'll be dying to try it";
       string name2 = "Cardi B's Waffles and Pancakes";
-      Vendor newVendor1 = new Vendor(name1);
-      Vendor newVendor2 = new Vendor(name2);
+      string discription2 = "....better than macaroni in a pot";
+      Vendor newVendor1 = new Vendor(name1, discription1);
+      Vendor newVendor2 = new Vendor(name2, discription2);
 
       Vendor result = Vendor.Find(2);
 
@@ -78,11 +87,14 @@ namespace Pierres.Tests
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
       //Arrange
-      string details = "the world's largest muffin.";
-      Order myOrder = new Order(details);
+      string details = "tons of tortillas.";
+      string date = "anytime, really";
+      double price = 12.00;
+      Order myOrder = new Order(details, date, price);
       List<Order> newList = new List<Order> { myOrder };
-      string name = "Cathy's SN-'Ack'-bar";
-      Vendor newVendor = new Vendor(name);
+      string name = "Admiral Ackbar's snack bar";
+      string discription = "It's a wrap!";
+      Vendor newVendor = new Vendor(name, discription);
       newVendor.AddOrder(myOrder);
 
       //Act
